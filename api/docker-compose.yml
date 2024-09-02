@@ -1,0 +1,30 @@
+services:
+  java:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: api-java
+    container_name: java
+    ports:
+      - '8080:8080'
+    volumes:
+      - ./logs:/app/logs 
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: mysql:latest
+    container_name: mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: yes
+      MYSQL_DATABASE: mydatabase
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: mypassword
+    healthcheck:
+      test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost", "--silent"]
+      timeout: 10s
+      retries: 5
+      start_period: 30s
