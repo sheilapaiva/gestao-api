@@ -175,7 +175,7 @@ Estas abaixo só estão **liberadas** para acesso **com autenticação**. Caso q
 **Restrições:**
 - Precisa ser um endereço de e-mail em um formato válido.
 - Precisa ser um cnpj em um formato válido.
-- Pode apenas ter um usuário com o mesmo email/cnpj.
+- Pode apenas ter um cliente com o mesmo email/cnpj.
 - Precisa preencher todos os campos.
 
 - [GET] /clients/{id} - Obter um cliente por ID
@@ -208,7 +208,7 @@ Estas abaixo só estão **liberadas** para acesso **com autenticação**. Caso q
 - Precisa ser um id válido.
 - Precisa ser um endereço de e-mail em um formato válido.
 - Precisa ser um cnpj em um formato válido.
-- Pode apenas ter um usuário com o mesmo email/cnpj.
+- Pode apenas ter um cliente com o mesmo email/cnpj.
 
 - [DELETE] /clients/{id} - Deletar um cliente
 
